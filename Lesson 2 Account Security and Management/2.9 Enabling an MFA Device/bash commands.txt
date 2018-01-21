@@ -5,7 +5,7 @@ aws --profile admin iam create-virtual-mfa-device --virtual-mfa-device-name SCoo
 aws --profile admin iam enable-mfa-device --user-name s.cooper --serial-number <device arn> --authentication-code-1 <code> --authentication-code-2 <code>
 
 
-# configure AWS CLI to use this device when assuming roles # MFA does not work on Git Bash Windows
+# configure AWS CLI to use this device when assuming roles # MFA does not work on Git Bash
 aws --profile dev configure set role_arn <role arn from dev account>
 aws --profile dev configure set source_profile admin
 aws --profile dev configure set mfa_serial <mfa device serial>
